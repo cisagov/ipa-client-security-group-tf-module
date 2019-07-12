@@ -32,20 +32,16 @@ module "example" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-------:|:--------:|
-| aws_region | The AWS region to deploy into (e.g. us-east-1) | string | | yes |
-| aws_availability_zone | The AWS availability zone to deploy into (e.g. a, b, c, etc.) | string | | yes |
-| subnet_id | The ID of the AWS subnet to deploy into (e.g. subnet-0123456789abcdef0) | string | | yes |
+| ipa_server_cidr_blocks | A list of CIDR blocks containing the IPA servers to which the clients will be allowed to connect (e.g. [100.10.1.23/32, 101.45.32.89/32]) | list(string) | | yes |
+| vpc_id | The ID of the AWS VPC where the security group will live (e.g. vpc-0123456789abcdef0) | string | | yes |
 | tags | Tags to apply to all AWS resources created | map(string) | `{}` | no |
 
 ## Outputs ##
 
 | Name | Description |
 |------|-------------|
-| id | The EC2 instance ID |
-| arn | The EC2 instance ARN |
-| availability_zone | The AZ where the EC2 instance is deployed |
-| private_ip | The private IP of the EC2 instance |
-| subnet_id | The ID of the subnet where the EC2 instance is deployed |
+| id | The security group ID |
+| arn | The security group ARN |
 
 ## Contributing ##
 
