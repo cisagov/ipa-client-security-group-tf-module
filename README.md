@@ -10,12 +10,11 @@ ports.
 ## Usage ##
 
 ```hcl
-module "example" {
+module "ipa_client_security_group" {
   source = "github.com/cisagov/ipa-client-security-group-tf-module"
 
-  aws_region            = "us-west-1"
-  aws_availability_zone = "b"
-  subnet_id             = "subnet-0123456789abcdef0"
+  ipa_server_cidr_blocks = ["100.10.23.1/32"]
+  vpc_id                 = "vpc-0123456789abcdef0"
 
   tags = {
     Key1 = "Value1"
