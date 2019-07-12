@@ -26,7 +26,7 @@ module "example" {
 
 ## Examples ##
 
-* [Deploying into the default VPC](https://github.com/cisagov/ipa-client-security-group-tf-module/tree/develop/examples/default_vpc)
+* [Basic usage](https://github.com/cisagov/ipa-client-security-group-tf-module/tree/develop/examples/basic_usage)
 
 ## Inputs ##
 
@@ -40,8 +40,8 @@ module "example" {
 
 | Name | Description |
 |------|-------------|
-| id | The security group ID |
 | arn | The security group ARN |
+| id | The security group ID |
 
 ## Contributing ##
 
