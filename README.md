@@ -2,17 +2,10 @@
 
 [![Build Status](https://travis-ci.com/cisagov/ipa-client-security-group-tf-module.svg?branch=develop)](https://travis-ci.com/cisagov/ipa-client-security-group-tf-module)
 
-This is a generic skeleton project that can be used to quickly get a
-new [cisagov](https://github.com/cisagov) [Terraform
-module](https://www.terraform.io/docs/modules/index.html) GitHub
-repository started.  This skeleton project contains [licensing
-information](LICENSE), as well as [pre-commit
-hooks](https://pre-commit.com) and a [Travis
-CI](https://travis-ci.com) configuration appropriate for the major
-languages that we use.
-
-See [here](https://www.terraform.io/docs/modules/index.html) for more
-details on Terraform modules and the standard module structure.
+A [Terraform module](https://www.terraform.io/docs/modules/index.html)
+for creating an AWS security group suitable for an IPA client.  This
+security group allows traffic to the IPA server via the necessary
+ports.
 
 ## Usage ##
 
