@@ -3,23 +3,21 @@ provider "aws" {
 }
 
 #-------------------------------------------------------------------------------
-# Data sources to get default VPC and its subnets.
+# Data source to get the default VPC.
 #-------------------------------------------------------------------------------
 data "aws_vpc" "default" {
   default = true
 }
 
-data "aws_subnet_ids" "default" {
-  vpc_id = data.aws_vpc.default.id
-}
-
 #-------------------------------------------------------------------------------
-# Configure the example module.
+# Configure the module.
 #-------------------------------------------------------------------------------
-module "example" {
+module "ipa_client_security_group" {
   source = "../../"
 
-  aws_region            = "us-west-1"
-  aws_availability_zone = "b"
-  subnet_id             = tolist(data.aws_subnet_ids.default.ids)[0]
+  ipa_server_cidr_blocks = ["100.10.23.1/32"]
+  vpc_id                 = data.aws_vpc.default.id
+  tags = {
+    key = "Value"
+  }
 }
